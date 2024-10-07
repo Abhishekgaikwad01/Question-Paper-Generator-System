@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>AngularJS Form</title>
+  <script src="bootstrap.min.css"></script>
+
+
+  <style>
+    body{
+      margin: 10px;
+      background-color:rgb(243, 184, 194);
+      font-size: 19px;
+      padding: 30px;
+      border-radius: 4px black solid;
+      position: relative;
+    }
+    .box{
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid black;
+      margin-left: 400px;
+      max-width: 400px;
+      height:550px;
+      background-color: aliceblue;
+      border-radius: 10px;
+      box-shadow: 4px 5px 6px;
+      
+    }
+    .button{
+      margin: 30px;
+      max-width: 100px;
+      height: 40px;
+    }
+    .class1{
+
+      margin-bottom: 10px;
+      
+    }
+    
+    
+    .class1 input {
+      max-width: 400px;
+      height: 20px;
+  
+    }
+    
+    #lable1{
+      margin: 10px;
+    }
+    #lable2{
+      margin: 10px;
+    }
+
+    #lable3{
+      margin: 10px;
+    }
+    #lable4{
+      margin: 10px;
+    }
+    #lable5{
+      margin: 10px;
+    }
+    #lable6{
+      margin: 10px;
+    }
+    .button{
+    
+     height: 30px;
+    }
+    
+  </style>
+</head>
+
+<body ng-controller="myController">
+  <form name="myForm" action="paper.php" method="POST" id="f1" ng-submit="submitForm()" class="class1">
+    
+    
+    <div class="box">
+    <div id="lable1" >
+      
+      <label for="q1">For unit 1&2:</label>
+      <input type="number" id="q1" name="numSubquestions1" ng-model="userValues.q1" ng-min="1" ng-max="3" required>
+
+      <div ng-show="myForm.numSubquestions1.$error.number || myForm.numSubquestions1.$error.max" style="color: red;">
+        Please enter a valid number between 1 and 3.
+      </div>
+      <br>
+    </div>
+
+    <div id="label2">
+      
+      <label for="q2">For unit 3&4:</label>
+      <input type="number" id="q2" name="numSubquestions2" ng-model="userValues.q2" ng-min="1" ng-max="3" required>
+
+      <div ng-show="myForm.numSubquestions2.$error.number || myForm.numSubquestions2.$error.max" style="color: red;">
+        Please enter a valid number between 1 and 3.
+      </div>
+      <br>
+    </div>
+
+    <div id="lable3">
+      <label for="q3">For unit 5&6:</label>
+      <input type="number" id="q3" name="numSubquestions3" ng-model="userValues.q3" ng-min="1" ng-max="3" required>
+
+      <div ng-show="myForm.numSubquestions3.$error.number || myForm.numSubquestions3.$error.max" style="color: red;">
+        Please enter a valid number between 1 and 3.
+      </div>
+      <br>
+    </div>
+
+    <div id="lable4">
+      <label for="q4">For unit 7&8:</label>
+      <input type="number" id="q4" name="numSubquestions4" ng-model="userValues.q4" ng-min="1" ng-max="3" required>
+
+      <div ng-show="myForm.numSubquestions4.$error.number || myForm.numSubquestions4.$error.max" style="color: red;">
+        Please enter a valid number between 1 and 3.
+      </div>
+      <br>
+    </div>
+
+    <div id="lable5">
+      <label for="q5">For unit 9&10:</label>
+      <input type="number" id="q5" name="numSubquestions5" ng-model="userValues.q5" ng-min="1" ng-max="3" required>
+
+      <div ng-show="myForm.numSubquestions5.$error.number || myForm.numSubquestions5.$error.max"style="color: red;">
+        Please enter a valid number between 1 and 3.
+      </div>
+      <br>
+    </div>
+
+    <div id="lable6">
+      <label for="q6">For unit 11&12:</label>
+      <input type="number" id="q6" name="numSubquestions6" ng-model="userValues.q6" ng-min="1" ng-max="3" required>
+
+      <div ng-show="myForm.numSubquestions6.$error.number || myForm.numSubquestions6.$error.max"style="color: red;">
+        Please enter a valid number between 1 and 3.
+      </div>
+      
+  
+
+    
+      <br>
+    <center ><button type="submit" class="button" style="background-color:yellow" >Submit</button></center>
+  </div>
+  </form>
+
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myController', function ($scope) {
+      $scope.userValues = {};
+
+      $scope.submitForm = function () {
+        // Handle form submission logic here
+        console.log("User entered: ", $scope.userValues);
+      };
+    });
+  </script>
+
+</body>
+
+</html>
